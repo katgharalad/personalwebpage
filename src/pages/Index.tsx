@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import IntroductionSection from '@/components/IntroductionSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import LinksSection from '@/components/LinksSection';
+import SisyphusAnimation from '@/components/SisyphusAnimation';
 
 const Index: React.FC = () => {
   const [activeSection, setActiveSection] = useState('introduction');
@@ -43,6 +44,8 @@ const Index: React.FC = () => {
     <div className="bg-gradient-dark min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(60,60,80,0.3),transparent_70%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(20,20,40,0.4),transparent_70%)] pointer-events-none"></div>
+      
+      <SisyphusAnimation />
       
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
       
