@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AudioTranscripY from "./pages/AudioTranscripY";
+import MaintenancePredictor from "./pages/MaintenancePredictor";
+import LateGrub from "./pages/LateGrub";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/projects/audiotranscripy" element={<AudioTranscripY />} />
+          <Route path="/projects/maintenancepredictor" element={<MaintenancePredictor />} />
+          <Route path="/projects/lategrub" element={<LateGrub />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

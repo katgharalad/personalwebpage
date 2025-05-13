@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Carousel,
   CarouselContent,
@@ -13,19 +14,22 @@ const projects = [
     id: 1,
     title: "LateGrub — Food Delivery App",
     description: "Designed and deployed a late-night food delivery platform with real-time tracking and live chat, reaching 20+ users in the first week.",
-    tags: ["React", "Firebase", "Full-Stack"]
+    tags: ["React", "Firebase", "Full-Stack"],
+    link: "/projects/lategrub"
   },
   {
     id: 2,
     title: "OpEx: Fire Dispatch AI Engine",
     description: "Built a real-time fire dispatch engine using Whisper and NLP to transcribe 911 calls, classify incidents, and map hydrant-based routing.",
-    tags: ["NLP", "GIS", "Machine Learning"]
+    tags: ["NLP", "GIS", "Machine Learning"],
+    link: "/projects/audiotranscripy"
   },
   {
     id: 3,
     title: "Machine Maintenance Predictor",
     description: "Developed a predictive maintenance model with 94.7% binary and 96.5% multiclass accuracy, deployed with Streamlit and Scikit-Learn.",
-    tags: ["Streamlit", "Random Forest", "Predictive Modeling"]
+    tags: ["Streamlit", "Random Forest", "Predictive Modeling"],
+    link: "/projects/maintenancepredictor"
   }
 ];
 
@@ -71,13 +75,21 @@ const ProjectsSection: React.FC = () => {
                       >
                         <h3 className="text-2xl md:text-3xl font-digital font-bold text-glow-static mb-4">{project.title}</h3>
                         <p className="text-lg md:text-xl font-mono text-white/90 mb-6">{project.description}</p>
-                        <div className="flex flex-wrap gap-3 justify-center">
+                        <div className="flex flex-wrap gap-3 justify-center mb-4">
                           {project.tags.map((tag) => (
                             <span key={tag} className="text-base md:text-lg font-mono text-white/70">
                               #{tag}
                             </span>
                           ))}
                         </div>
+                        {project.link && (
+                          <Link 
+                            to={project.link} 
+                            className="text-lg font-digital text-neon-yellow hover:text-white transition-colors duration-300"
+                          >
+                            View Details
+                          </Link>
+                        )}
                       </motion.div>
                     </CarouselItem>
                   ))}
