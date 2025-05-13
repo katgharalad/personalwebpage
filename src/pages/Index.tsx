@@ -43,7 +43,7 @@ const Index: React.FC = () => {
       {/* Background image with overlay */}
       <div className="fixed inset-0 z-0">
         <img 
-          src="/images/background.png" 
+          src="/images/bg.png" 
           alt="Background" 
           className="w-full h-full object-cover object-center"
         />
