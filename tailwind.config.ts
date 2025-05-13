@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				glass: {
+					DEFAULT: 'rgba(23, 25, 35, 0.6)',
+					light: 'rgba(255, 255, 255, 0.05)',
+					dark: 'rgba(15, 15, 20, 0.8)',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +90,28 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						textShadow: '0 0 8px rgba(255, 255, 255, 0.5)' 
+					},
+					'50%': { 
+						textShadow: '0 0 12px rgba(255, 255, 255, 0.8)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'monospace'],
+				digital: ['Space Mono', 'monospace']
+			},
+			backgroundImage: {
+				'gradient-dark': 'linear-gradient(135deg, #121212 0%, #1A1F2C 100%)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
