@@ -39,12 +39,12 @@ const ProjectsSection: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="glass-panel p-8 rounded-xl max-w-4xl"
+        className="glass-panel p-8 rounded-xl max-w-4xl mx-auto"
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => setIsExpanded(false)}
         onClick={() => setIsExpanded(!isExpanded)} // Toggle on click for mobile
       >
-        <h2 className="text-xl md:text-2xl font-digital font-bold text-neon-yellow mb-10">
+        <h2 className="text-xl md:text-2xl font-digital font-bold text-neon-yellow mb-10 text-center">
           <span className="text-white/70">//</span> PROJECTS
         </h2>
         
