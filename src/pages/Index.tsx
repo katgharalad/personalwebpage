@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import IntroductionSection from '@/components/IntroductionSection';
@@ -40,16 +39,29 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-dark min-h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(60,60,80,0.3),transparent_70%)] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(20,20,40,0.4),transparent_70%)] pointer-events-none"></div>
+    <div className="min-h-screen overflow-hidden relative">
+      {/* Background image with overlay */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src="/images/background.png" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/50"></div> {/* Lighter overlay to ensure text visibility */}
+      </div>
       
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
       
-      <main className="relative z-10">
-        <IntroductionSection />
-        <ProjectsSection />
-        <LinksSection />
+      <main className="relative z-10 snap-y snap-mandatory">
+        <div className="snap-center">
+          <IntroductionSection />
+        </div>
+        <div className="snap-center">
+          <ProjectsSection />
+        </div>
+        <div className="snap-center">
+          <LinksSection />
+        </div>
       </main>
     </div>
   );

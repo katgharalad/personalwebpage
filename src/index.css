@@ -1,49 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap');
-
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 0 0% 5%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 5%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 0 0% 5%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 83.9%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 0 0% 26.1%;
+    --sidebar-primary: 0 0% 0%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
+    --sidebar-accent: 0 0% 95.9%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -54,7 +53,7 @@
   }
 
   body {
-    @apply bg-gradient-dark text-foreground antialiased overflow-x-hidden min-h-screen;
+    @apply bg-black text-foreground antialiased overflow-x-hidden min-h-screen;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
@@ -65,15 +64,15 @@
 
 @layer utilities {
   .glass-panel {
-    @apply backdrop-blur-lg bg-glass border border-white/10 shadow-xl;
+    @apply backdrop-blur-lg bg-black border border-white/10 shadow-xl;
   }
   
   .glass-panel-light {
-    @apply backdrop-blur-md bg-glass-light border border-white/10;
+    @apply backdrop-blur-md bg-black border border-white/10;
   }
   
   .glass-panel-dark {
-    @apply backdrop-blur-xl bg-glass-dark border border-white/5;
+    @apply backdrop-blur-xl bg-black border border-white/5;
   }
   
   .text-glow {
