@@ -1,6 +1,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
 const projects = [
   {
@@ -32,31 +39,38 @@ const ProjectsSection: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="glass-panel p-8 rounded-xl max-w-4xl"
       >
-        <h2 className="text-xl md:text-2xl font-digital font-bold text-glow mb-10">
+        <h2 className="text-xl md:text-2xl font-digital font-bold text-neon-yellow mb-10">
           <span className="text-white/70">//</span> PROJECTS
         </h2>
         
-        <div className="space-y-8">
-          {projects.map((project) => (
-            <motion.div 
-              key={project.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: project.id * 0.2 }}
-              className="glass-panel-light p-6 rounded-lg hover:bg-white/10 transition-all duration-300"
-            >
-              <h3 className="text-xl font-digital font-bold text-glow-static mb-2">{project.title}</h3>
-              <p className="text-base font-mono text-white/70 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="bg-white/5 px-3 py-1 rounded-full text-xs font-mono text-white/60">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel className="w-full">
+          <CarouselContent>
+            {projects.map((project) => (
+              <CarouselItem key={project.id} className="md:basis-2/3">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: project.id * 0.1 }}
+                  className="glass-panel-light p-6 rounded-lg h-full"
+                >
+                  <h3 className="text-xl font-digital font-bold text-glow-static mb-2">{project.title}</h3>
+                  <p className="text-base font-mono text-white/70 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="bg-white/5 px-3 py-1 rounded-full text-xs font-mono text-white/60">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex items-center justify-center mt-8 gap-4">
+            <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-white/5 hover:bg-white/10 border-white/10" />
+            <CarouselNext className="relative static left-0 right-0 translate-y-0 bg-white/5 hover:bg-white/10 border-white/10" />
+          </div>
+        </Carousel>
       </motion.div>
     </section>
   );

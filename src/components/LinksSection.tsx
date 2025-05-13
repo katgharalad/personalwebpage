@@ -39,7 +39,7 @@ const LinksSection: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="glass-panel p-8 rounded-xl max-w-3xl"
       >
-        <h2 className="text-xl md:text-2xl font-digital font-bold text-glow mb-10">
+        <h2 className="text-xl md:text-2xl font-digital font-bold text-neon-blue mb-10">
           <span className="text-white/70">//</span> LINKS
         </h2>
         

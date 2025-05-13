@@ -83,6 +83,18 @@
   .text-glow-static {
     @apply text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)];
   }
+  
+  .text-neon-pink {
+    @apply text-[#FF10F0] animate-neon-pulse-pink;
+  }
+  
+  .text-neon-yellow {
+    @apply text-[#FFFF00] animate-neon-pulse-yellow;
+  }
+  
+  .text-neon-blue {
+    @apply text-[#00FFFF] animate-neon-pulse-blue;
+  }
 }
 
 #root {
